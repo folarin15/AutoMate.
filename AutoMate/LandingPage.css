@@ -1,0 +1,1425 @@
+/* Global Variables ( Drop in global CSS or Tailwind config. No touch my color gradient oo!) */
+:root {
+  --primary-color: #b87363;
+  --secondary-color: #e85a10;
+  --background-light: #f9fafb;
+  --background-dark: #111827;
+  --surface-light: #ffffff;
+  --surface-dark: #1f2937;
+
+  --primary-font: "Inter", sans-serif;
+  --text-font: "Roboto Mono", monospace;
+  --secondary-font: "Archivo";
+  --block-font: "Tourney";
+}
+/* OVERFLOWING ON VIEWPORT */
+html,
+body {
+  overflow-x: hidden;
+}
+.image-container {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-light);
+  transition: all 0.5s ease-in-out;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  padding: 0 5%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: solid 1px lightgray;
+  top: 0;
+  height: 80px;
+  z-index: 1000;
+  position: sticky;
+  backdrop-filter: blur(12px);
+}
+.Logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* WHEN WE GET OUR REAL LOGO,WE'LL SUBSTITUTE THE ICON */
+.Logo i {
+  font-size: 30px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.Logo h1 {
+  font-family: var(--primary-font);
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+/* The nav-bar links */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--surface-dark);
+  margin: 0 16px;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Login Button */
+.Log {
+  position: relative;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 14px;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid rgb(221, 218, 218);
+  background: white;
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--primary-color);
+  transition: all 1.2s linear;
+  cursor: pointer;
+  isolation: isolate;
+}
+/* log in animation */
+.Log::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(135deg, #b87363 0%, #d4a373 100%);
+  border-radius: 30%;
+  height: 96px;
+  width: 96px;
+  animation: spin infinite linear 1.8s;
+  animation-delay: 0;
+  bottom: -38px;
+  right: -112px;
+  transition: all 1.2s linear;
+  z-index: -1;
+}
+.Log:hover {
+  color: #fff;
+  transition-duration: 1.2s;
+}
+.Log:hover::after {
+  right: -60px;
+  bottom: -92px;
+  width: 256px;
+  height: 256px;
+}
+.Log > .button-content {
+  position: relative;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.Get {
+  position: relative;
+  padding: 12px 28px;
+  background: #000;
+  color: gainsboro;
+  border: 1px solid #333;
+  border-radius: 30px;
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* White Flash animation */
+.Get::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+
+  /* Light beam effect */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: all 0.6s ease;
+}
+
+.Get:hover {
+  color: #fff; /* Text lights up fully */
+  border-color: #666;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.Get:hover::before {
+  left: 150%; /* The light sweeps across */
+}
+
+/* Hero Section */
+.Hero {
+  display: flex;
+  padding: 0px 10%;
+  gap: 50px;
+}
+
+/* Hero Left Box */
+.left-box {
+  flex: 1;
+  align-items: center;
+  padding-top: 100px;
+}
+.hero-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  font-family: var(--primary-font);
+}
+/* The Orange Badge thingy */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: #ffedd5;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+.hero-heading {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--surface-dark);
+  margin: 0;
+  line-height: 1.05;
+}
+/* Hero Main text */
+.highlight-text {
+  display: inline-block;
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.anxiety-wrapper {
+  position: relative;
+  display: inline-block;
+}
+/* The Long Dash */
+.swoosh-underline {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 20px;
+  color: var(--secondary-color);
+  opacity: 0.6;
+  pointer-events: none;
+}
+.hero-subtext {
+  font-size: 18px;
+  font-family: var(--text-font);
+  line-height: 1.6;
+  margin: 0;
+  color: lightslategray;
+  margin-bottom: 30px;
+}
+
+/* Ami Chat & Demo Buttons */
+.Ami-chat {
+  padding: 16px 32px;
+  font-family: var(--secondary-font);
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 10px;
+  background: linear-gradient(to right, #b87363, #ea580c);
+  border: none;
+  border-radius: 12px;
+  width: 180px;
+  color: white;
+  box-shadow: 0px 14px 24px -6px rgba(214, 114, 82, 0.5);
+  transition: background-color 1s ease;
+  cursor: pointer;
+}
+.Ami-chat:hover {
+  background: linear-gradient(to right, #db6027, #f8ca29);
+}
+.Demo {
+  padding: 16px 32px;
+  font-family: var(--secondary-font);
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid gainsboro;
+  border-radius: 12px;
+  width: 200px;
+  transition: background-color 0.7s ease-out;
+  cursor: pointer;
+}
+.Demo:hover {
+  background-color: rgb(226, 223, 223);
+}
+.Ami {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1em;
+  letter-spacing: -0.01em;
+  display: inline;
+}
+
+/* Hero Stats Row */
+
+.stat-row {
+  border-top: 1px solid gainsboro;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+/* Line Divider */
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #d1d5db;
+}
+
+.Stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.Stats h3 {
+  font-family: var(--primary-font);
+  font-size: 25px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+.Stats p {
+  font-family: var(--primary-font);
+  font-size: 15px;
+  font-weight: 400;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Hero Right Box */
+.right-box {
+  flex: 1;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+.image-container {
+  position: relative;
+  width: 746px; /* Don't change this value, It makes the car looks too small. */
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 25px 25px rgba(0, 0, 0, 0.3));
+  transition: transform 0.5s ease-in-out;
+  z-index: 5;
+}
+.right-box img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0px 35px 35px rgba(0, 0, 0, 0.4)) contrast(1.1);
+}
+.watermark {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--secondary-font);
+  font-size: 6rem;
+  font-weight: 900;
+  white-space: nowrap;
+  color: lightgrey;
+  opacity: 0.5;
+  z-index: -8;
+  pointer-events: none;
+}
+
+/* The Glassmorphic floating cards in relation to the car*/
+.float {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 6px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(243, 244, 246, 1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  font-family: var(--primary-font);
+}
+.card-one {
+  top: 45%;
+  right: 0;
+}
+.card-two {
+  bottom: 16%;
+  left: 0;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 7px;
+  border-radius: 13px;
+}
+.box-one {
+  background-color: #dcfce7;
+}
+.box-one i {
+  color: #66c78a;
+}
+.box-two {
+  background-color: #dbeafe;
+}
+.box-two i {
+  color: #4278ee;
+}
+
+.text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--primary-font);
+}
+.text-group h3 {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+.text-group p {
+  font-family: var(--primary-font);
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Trust Features Strip */
+.trust-features {
+  background-color: var(--surface-light);
+  display: flex;
+  padding: 50px 10%;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid gainsboro;
+}
+.Trust-cards {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.icon-box {
+  background-color: #fff7ed;
+  padding: 20px 15px;
+  border-radius: 10px;
+}
+.icon-box i {
+  color: #c48e80;
+  font-size: 18px;
+}
+.text-box h4 {
+  font-family: var(--primary-font);
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+.text-box p {
+  font-family: var(--primary-font);
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.2;
+  max-width: 200px;
+}
+
+/* The Tokunbo Trap (HUD Effect) */
+.tokunbo-trap {
+  display: flex;
+  padding: 80px 10%;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Tokunbo Trap Left Box & HUD Labels */
+.trap-left-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.tech-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+/* We might have to change this image...it's a stock photo. */
+.trap-car-img {
+  width: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.tech-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  font-family: var(--primary-font);
+}
+/* The red and white labels */
+.label-content {
+  background-color: var(--surface-light);
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--primary-font);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--surface-dark);
+  white-space: nowrap;
+}
+.label-content i {
+  color: #ef4444;
+  font-size: 14px;
+}
+.tech-line {
+  height: 2px;
+  width: 40px;
+  background-color: #ef4444;
+  opacity: 0.7;
+}
+.line-long {
+  width: 80px;
+}
+.line-medium {
+  width: 60px;
+}
+.tech-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  position: relative;
+}
+.tech-dot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid #ef4444;
+  animation: radar-pulse 2s infinite ease-out;
+}
+/* Label animations */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.label-engine {
+  top: 35%;
+  left: -15%;
+}
+.label-flood {
+  bottom: 25%;
+  left: -25%;
+}
+.label-odometer {
+  top: 45%;
+  right: -25%;
+}
+
+/* Trap Right Box */
+.trap-right-box {
+  flex: 1;
+}
+.trap-right-box h1 {
+  font-family: var(--primary-font);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--surface-dark);
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.trap-desc {
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.trap-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.trap-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.trap-item i {
+  color: #ef4444;
+  font-size: 18px;
+}
+.trap-item p {
+  font-family: var(--primary-font);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--surface-dark);
+  margin: 0;
+}
+
+/* Solid Drive Promise Section */
+.solid-drive-section {
+  display: flex;
+  padding: 80px 10%;
+  gap: 60px;
+  align-items: center;
+  background-color: var(--background-light);
+}
+
+/* Solid Drive Left Box */
+.sd-left-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.sd-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: #e0e7ff;
+  border-radius: 50px;
+  width: max-content;
+  font-family: var(--primary-font);
+  font-size: 11px;
+  font-weight: 800;
+  color: #4338ca;
+  letter-spacing: 1px;
+}
+.sd-heading {
+  font-family: var(--primary-font);
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--surface-dark);
+  margin: 0;
+  line-height: 1.1;
+}
+.sd-heading .highlight-text {
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.sd-subtext {
+  font-family: var(--primary-font);
+  font-size: 18px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 550px;
+}
+
+/* Solid Drive Action Buttons */
+.sd-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+.btn-dark {
+  background-color: var(--surface-dark);
+  color: var(--surface-light);
+  border: none;
+  border-radius: 50px;
+  padding: 16px 32px;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+.btn-dark:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+}
+.btn-outline {
+  background-color: transparent;
+  color: var(--surface-dark);
+  border: 1px solid #d1d5db;
+  border-radius: 50px;
+  padding: 16px 32px;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background-color: #f3f4f6;
+}
+
+/* Solid Drive Social Proof */
+.sd-social-proof {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+.avatars {
+  display: flex;
+  align-items: center;
+}
+.avatars img,
+.avatar-count {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--surface-light);
+  margin-left: -12px;
+}
+.avatars img:first-child {
+  margin-left: 0;
+}
+.avatar-count {
+  background-color: #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--primary-font);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--surface-dark);
+  z-index: 5;
+}
+.sd-social-proof p {
+  font-family: var(--primary-font);
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Solid Drive CSS Report Card */
+.sd-right-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.sd-right-box::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 350px;
+  background-color: #dbeafe;
+  border-radius: 24px;
+  top: 30px;
+  right: 10%;
+  z-index: 0;
+}
+.css-report-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--surface-light);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+.crc-header {
+  height: 160px;
+  background-color: #f3f4f6;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+.crc-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.crc-passed-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: #22c55e;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-family: var(--primary-font);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+}
+.crc-body {
+  padding: 24px;
+}
+.crc-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  gap: 10px;
+}
+.crc-title-row h2 {
+  font-family: var(--primary-font);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--surface-dark);
+  margin: 0;
+}
+.crc-title-row .crc-price {
+  color: var(--primary-color);
+}
+.crc-subtitle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.crc-subtitle-row p {
+  font-family: var(--primary-font);
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+.crc-negotiable {
+  color: #9ca3af !important;
+  font-size: 12px !important;
+}
+.crc-stats-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #f9fafb;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #f3f4f6;
+}
+.crc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--primary-font);
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+}
+.crc-stat i {
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  background-color: var(--surface-dark);
+  color: #e5e7eb;
+  padding: 100px 10% 40px;
+  overflow: hidden;
+}
+/* Essential footer bg - "Chef's Kiss" */
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/topography.svg") center/cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.cont {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-logo i {
+  font-size: 28px;
+  color: var(--primary-color);
+}
+.footer-logo h1 {
+  font-family: var(--primary-font);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+.Text p {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #9ca3af;
+  margin: 20px 0;
+  max-width: 320px;
+}
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d1d5db;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+/* Don't leave out this hover animation bro */
+.social-icons a:hover {
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  transform: translateY(-3px);
+}
+.Link h2 {
+  font-family: var(--primary-font);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: white;
+}
+.Link a {
+  display: block;
+  font-family: var(--primary-font);
+  font-size: 14px;
+  color: #9ca3af;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+.Link a:hover {
+  color: var(--primary-color);
+}
+.foot {
+  border-top: 1px solid #374151;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--primary-font);
+  font-size: 13px;
+  color: #9ca3af;
+}
+.legal-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+.legal-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive Code Section */
+@media (max-width: 1200px) {
+  .Hero {
+    flex-direction: column; 
+    padding: 40px 5%;
+    text-align: center;
+  }
+
+  .hero-text-block {
+    align-items: center; 
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    min-height: auto;
+  }
+
+  /* Hide or adjust floating cards for mobile so they don't overlap text */
+  .float {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: 40px;
+  }
+
+  .image-container {
+    max-width: 100%; 
+  }
+}
+
+ /* RESPONSIVE - Breakpoints: 1200px | 1024px | 768px | 480px */
+  
+
+/* ── 1200px: Wide tablets / small laptops ── */
+@media (max-width: 1200px) {
+  
+  nav {
+    padding: 0 4%;
+  }
+  .nav-links a {
+    margin: 0 10px;
+    font-size: 14px;
+  }
+
+  .image-container {
+    width: 100% !important;
+    max-width: 520px;
+  }
+  /* Hero */
+  .Hero {
+    flex-direction: column;
+    padding: 60px 6% 40px;
+    gap: 30px;
+    text-align: center;
+  }
+  .hero-text-block {
+    align-items: center;
+  }
+  .hero-heading {
+    font-size: 58px;
+  }
+  .buttons {
+    justify-content: center;
+  }
+  .stat-row {
+    justify-content: center;
+  }
+
+  /* Hero image */
+  .right-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .image-container {
+    width: 100%;
+    max-width: 520px;
+    min-height: auto;
+  }
+  .float {
+    display: none;
+  }
+  .watermark {
+    font-size: 4rem;
+  }
+
+  /* Trust strip */
+  .trust-features {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 6%;
+  }
+  .Trust-cards {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 200px;
+  }
+
+  /* Tokunbo Trap */
+  .tokunbo-trap {
+    flex-direction: column;
+    padding: 60px 6%;
+    gap: 40px;
+  }
+  .trap-left-box {
+    width: 100%;
+  }
+  .tech-image-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .label-engine {
+    left: -5%;
+  }
+  .label-flood {
+    left: -10%;
+  }
+  .label-odometer {
+    right: -10%;
+  }
+
+  .trap-right-box {
+    text-align: center;
+  }
+  .trap-list {
+    align-items: center;
+  }
+
+  /* Solid Drive */
+  .solid-drive-section {
+    flex-direction: column;
+    padding: 60px 6%;
+    gap: 40px;
+  }
+  .sd-left-box {
+    align-items: center;
+    text-align: center;
+  }
+  .sd-heading {
+    font-size: 44px;
+  }
+  .sd-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .sd-right-box::before {
+    width: 80%;
+    right: 10%;
+  }
+
+  /* Footer */
+  .cont {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* ── 1024px: Tablets landscape ── */
+@media (max-width: 1024px) {
+  .hero-heading {
+    font-size: 50px;
+  }
+  .sd-heading {
+    font-size: 38px;
+  }
+  .trap-right-box h1 {
+    font-size: 34px;
+  }
+}
+
+/* ── 768px: Tablets portrait / large phones ── */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 5%;
+    height: 70px;
+  }
+  .nav-links {
+    display: none; /* exchange it with an hamburger in React */
+  }
+  .Actions {
+    display: flex;
+    gap: 8px;
+  }
+  .Log {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+  .Get {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  /* Hero */
+  .Hero {
+    padding: 50px 5% 30px;
+  }
+  .hero-heading {
+    font-size: 42px;
+  }
+  .hero-subtext {
+    font-size: 15px;
+  }
+  .Ami-chat,
+  .Demo {
+    padding: 13px 22px;
+    font-size: 15px;
+    width: auto;
+  }
+  .stat-row {
+    gap: 24px;
+  }
+  .Stats h3 {
+    font-size: 20px;
+  }
+
+  /* Trust strip — stack 2 per row */
+  .trust-features {
+    padding: 30px 5%;
+  }
+  .Trust-cards {
+    flex: 1 1 calc(50% - 16px);
+  }
+
+  /* red and white labels — pull closer to image */
+  .label-engine {
+    left: 0%;
+    top: 25%;
+  }
+  .label-flood {
+    left: 0%;
+    bottom: 15%;
+  }
+  .label-odometer {
+    right: 0%;
+    top: 40%;
+  }
+  .tech-line {
+    width: 24px;
+  }
+  .line-long {
+    width: 40px;
+  }
+  .line-medium {
+    width: 32px;
+  }
+  .label-content {
+    font-size: 11px;
+    padding: 7px 10px;
+  }
+
+  /* Solid Drive */
+  .sd-heading {
+    font-size: 34px;
+  }
+  .sd-subtext {
+    font-size: 16px;
+  }
+  .btn-dark,
+  .btn-outline {
+    padding: 13px 22px;
+    font-size: 14px;
+  }
+  .sd-right-box::before {
+    display: none;
+  }
+  .css-report-card {
+    max-width: 100%;
+  }
+
+  /* Footer */
+  .cont {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  footer {
+    padding: 60px 5% 32px;
+  }
+  .foot {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .legal-links a {
+    margin: 0 10px;
+  }
+}
+
+/* ── 480px: Small phones ── */
+@media (max-width: 480px) {
+  .Actions .Log {
+    display: none; /* Keep only "Get started" on tiny screens */
+  }
+
+  /* Hero */
+  .Hero {
+    padding: 40px 5% 24px;
+  }
+  .hero-heading {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+  .hero-subtext {
+    font-size: 14px;
+  }
+  .hero-badge {
+    font-size: 10px;
+  }
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .Ami-chat,
+  .Demo {
+    width: 100%;
+    max-width: 280px;
+    margin: 0;
+  }
+  .stat-row {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  .stat-divider {
+    display: none;
+  }
+  .Stats {
+    flex: 1 1 70px;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Trust strip */
+  .Trust-cards {
+    flex: 1 1 100%;
+  }
+
+  /* Tokunbo Trap */
+  .tokunbo-trap {
+    padding: 48px 5%;
+  }
+  .trap-right-box h1 {
+    font-size: 28px;
+  }
+  .trap-desc {
+    font-size: 14px;
+  }
+  .label-engine,
+  .label-flood,
+  .label-odometer {
+    display: none; /* Too cramped on 480px; remove HUD labels */
+  }
+
+  /* Solid Drive */
+  .solid-drive-section {
+    padding: 48px 5%;
+  }
+  .sd-heading {
+    font-size: 28px;
+  }
+  .sd-subtext {
+    font-size: 15px;
+  }
+  .sd-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn-dark,
+  .btn-outline {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  .crc-title-row h2 {
+    font-size: 15px;
+  }
+  .crc-title-row .crc-price {
+    font-size: 15px;
+  }
+
+  /* Footer */
+  .cont {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  footer {
+    padding: 48px 5% 28px;
+  }
+  .footer-logo h1 {
+    font-size: 18px;
+  }
+  .Text p {
+    max-width: 100%;
+  }
+}
+/* And there you have it boys...evidence of my genius */
+/* Signed - Maverick */

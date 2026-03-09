@@ -4,35 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AutoMate | Don't just buy, Verify.</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/regular.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="LandingPage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tangerine:wght@400;700&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    
+    <!-- NAVBAR SECTION - IT'S GLASSMORPHIC OO -->
     <nav>
       <div class="Logo">
-        <i class="fa-solid fa-car"></i>
+        <i class="fa-solid fa-car-side"></i>
         <h1>AutoMate</h1>
       </div>
       <div class="nav-links">
-        <ul>
-          <li><a href="#">Buy a Car</a></li>
-          <li><a href="#"><span class="Ami">Ami</span> - Our Ai concierge</a></li>
-          <li><a href="#">Financing</a></li>
-          <li><a href="#">For dealers</a></li>
-        </ul>
+        <!-- Create array in react or "" -->
+        <a href="#">Buy a Car</a>
+        <a href="#"><span class="Ami">Ami</span> - AI Concierge</a>
+        <a href="#">Financing</a>
+        <a href="#">For dealers</a>
       </div>
       <div class="Actions">
-        <button class="Log"><span class="button-content">Log in</span></button>
+        <button class="Log">
+          <span class="button-content">Log in</span>
+        </button>
         <button class="Get">Get started</button>
       </div>
     </nav>
-
+    <!-- HERO SECTION-->
     <section class="Hero">
       <div class="left-box">
         <div class="hero-text-block">
@@ -45,23 +50,36 @@
             <span class="highlight-text">Car Buying</span> <br />
             <span class="anxiety-wrapper">
               <span class="highlight-text">Anxiety</span>
-              <svg class="swoosh-underline" preserveAspectRatio="none" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.00024 6.99999C28.5002 2.99999 90.5002 -2.00001 198 2.49999" stroke="currentColor" stroke-width="3"></path>
+              <svg
+                class="swoosh-underline"
+                preserveAspectRatio="none"
+                fill="none"
+                viewBox="0 0 200 9"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.00024 6.99999C28.5002 2.99999 90.5002 -2.00001 198 2.49999"
+                  stroke="currentColor"
+                  stroke-width="3"
+                ></path>
               </svg>
             </span>
           </h1>
           <p class="hero-subtext">
-            Verified sellers, comprehensive inspections, and transparent pricing. Experience the safest way to buy a used vehicle in Lagos and beyond.
+            Verified sellers. Comprehensive inspections. Transparent pricing.
+            The safest way to buy a used vehicle in Nigeria.
           </p>
         </div>
 
         <div class="buttons">
-          <button class="Ami-chat">Talk to <span class="Ami">Ami</span>
+          <button class="Ami-chat">Talk to <span class="Ami">Ami</span></button>
+          <button class="Demo">
+            <i class="fa-solid fa-circle-play"></i> How it works
           </button>
-          <button class="Demo"><i class="fa-solid fa-circle-play"></i> How it works</button>
         </div>
 
         <div class="stat-row">
+          <!-- Create array in react or "" -->
           <div class="Stats poll-one">
             <h3>15k+</h3>
             <p>Cars sold</p>
@@ -82,8 +100,11 @@
       <div class="right-box">
         <div class="image-container">
           <div class="watermark">ANXIETY FREE</div>
-          <img src="assets/background-removed-background-removed (1).png" alt="AutoMate Vehicle" />
-          
+          <img
+            src="assets/background-removed-background-removed (1).png"
+            alt="AutoMate Vehicle"
+          />
+          <!-- In all you do...Don't touch the car size. -->
           <div class="float card-one">
             <div class="icon box-one">
               <i class="fa-solid fa-clipboard-check"></i>
@@ -93,7 +114,6 @@
               <p>Passed 200-point check</p>
             </div>
           </div>
-          
           <div class="float card-two">
             <div class="icon box-two">
               <i class="fa-solid fa-clock-rotate-left"></i>
@@ -106,10 +126,11 @@
         </div>
       </div>
     </section>
-
+    <!-- TRUST FEATURES SECTION - A DIV SOUP -->
     <section>
       <div class="trust-features">
         <div class="Trust-cards">
+          <!-- Create array in react or "" -->
           <div class="icon-box"><i class="fa-solid fa-user-check"></i></div>
           <div class="text-box">
             <h4>Verified Dealers</h4>
@@ -124,7 +145,9 @@
           </div>
         </div>
         <div class="Trust-cards">
-          <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <div class="icon-box">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
           <div class="text-box">
             <h4>Mechanic Checked</h4>
             <p>Physically inspected by certified experts.</p>
@@ -139,11 +162,15 @@
         </div>
       </div>
     </section>
-
+<!-- TOKUNBO TRAP SECTION -->
     <section class="tokunbo-trap">
       <div class="trap-left-box">
         <div class="tech-image-container">
-          <img src="assets/Screenshot 2026-02-21 165552.png" alt="Used car with hidden faults" class="trap-car-img" />
+          <img
+            src="assets/Screenshot 2026-02-21 165552.png"
+            alt="Used car with hidden faults"
+            class="trap-car-img"
+          />
           <div class="tech-label label-engine">
             <div class="label-content">
               <i class="fa-solid fa-triangle-exclamation"></i>
@@ -170,14 +197,16 @@
           </div>
         </div>
       </div>
-
       <div class="trap-right-box">
         <h1>The "Tokunbo" Trap.</h1>
         <p class="trap-desc">
-          In Lagos alone, 65% of used cars sold have hidden mechanical faults or doctored history. A shiny exterior often hides a financial black hole.
+          In Lagos alone, 65% of used cars sold have hidden mechanical faults or
+          doctored history. A shiny exterior often hides a financial black hole.
         </p>
         <p class="trap-desc">
-          Traditional marketplaces are just directories. They connect you to a seller, but abandon you when it comes to the truth about the machine you're buying.
+          Traditional marketplaces are just directories. They connect you to a
+          seller, but abandon you when it comes to the truth about the machine
+          you're buying.
         </p>
         <div class="trap-list">
           <div class="trap-item">
@@ -195,7 +224,7 @@
         </div>
       </div>
     </section>
-
+<!-- SOLID DRIVE SECTION -->
     <section class="solid-drive-section">
       <div class="sd-left-box">
         <div class="sd-badge">
@@ -207,7 +236,9 @@
           <span class="highlight-text">Solid Drive&trade;</span> Promise.
         </h1>
         <p class="sd-subtext">
-          We don't just list cars; we vet them. Our inspectors check everything from engine compression to upholstery stitching, so you know exactly what you're buying. No surprises.
+          We don't just list cars; we vet them. Our inspectors check everything
+          from engine compression to upholstery stitching, so you know exactly
+          what you're buying. No surprises.
         </p>
         <div class="sd-buttons">
           <button class="btn-dark">
@@ -224,14 +255,17 @@
           <p>Join 2,000+ happy car owners in Lagos.</p>
         </div>
       </div>
-
       <div class="sd-right-box">
+        <!-- SOLID DRIVE REPORT CARD - SECTION -->
         <div class="css-report-card">
           <div class="crc-header">
             <div class="crc-passed-badge">
               <i class="fa-solid fa-circle-check"></i> Passed
             </div>
-            <img src="assets/imgi_67_e52f47739dee8a802b66f3fc45c7d9321313b296-1920x1080.png" alt="Report Car Image" />
+            <img
+              src="assets/imgi_67_e52f47739dee8a802b66f3fc45c7d9321313b296-1920x1080.png"
+              alt="Report Car Image"
+            />
           </div>
           <div class="crc-body">
             <div class="crc-title-row">
@@ -260,17 +294,19 @@
         </div>
       </div>
     </section>
-
+<!-- FOOTER SECTION - THIS FOOTER FINE MEHN, EMI FRONTEND GENIUS -->
     <footer>
       <div class="footer-content">
-        <div class="bios">
+        <div class="cont">
           <div class="Text">
             <div class="footer-logo">
               <i class="fa-solid fa-car"></i>
               <h1>AutoMate</h1>
             </div>
             <p>
-              Nigeria's most trusted online marketplace for buying and selling quality used cars. We remove the hassle and risk from automotive transactions.
+              Nigeria's most trusted online marketplace for buying and selling
+              quality used cars. We remove the hassle and risk from automotive
+              transactions.
             </p>
             <div class="social-icons">
               <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -302,7 +338,9 @@
           </div>
         </div>
         <div class="foot">
-          <p class="last">&copy; 2026 AutoMate Nigeria Ltd. All rights reserved.</p>
+          <p class="last">
+            &copy; 2026 AutoMate Nigeria Ltd. All rights reserved.
+          </p>
           <div class="legal-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
@@ -312,3 +350,4 @@
     </footer>
   </body>
 </html>
+```
