@@ -3,7 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
-/* Custom sleek scrollbar */
+/*  Thinner Scrollbar*/
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -30,11 +30,11 @@
   --primary-font: "Inter", sans-serif;
   --text-font: "Roboto Mono", monospace;
   --secondary-font: "Archivo";
-  --fancy-font: "Tangerine";
-  --block-font: "Tourney";
+  /* --fancy-font: "Tangerine";
+  --block-font: "Tourney"; */
 }
 
-/* Base Styles */
+/* Body Styles */
 body {
   margin: 0;
   padding: 0;
@@ -100,12 +100,12 @@ body {
   letter-spacing: 0.5px;
   font-family: var(--primary-font);
 }
-.ami-span{
+.ami-span {
   font-family: var(--fancy-font);
   font-size: 18px;
   font-weight: 600;
 }
-/* Theme Toggle Switch*/
+/* Theme Switch*/
 .switch {
   position: relative;
   display: inline-block;
@@ -142,7 +142,11 @@ body {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 .toggle:checked + .slider {
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
 }
 .toggle:checked + .slider:before {
   transform: translateX(16px);
@@ -175,19 +179,19 @@ body {
   display: flex;
   gap: 12px;
   max-width: 85%;
-  width: fit-content; 
+  width: fit-content;
 }
 
 .message-bubble {
-  padding: 10px 14px; 
+  padding: 10px 14px;
   line-height: 1.45;
   position: relative;
-  width: fit-content; 
+  width: fit-content;
   font-family: var(--secondary-font);
 }
 
 .message-bubble p {
-  margin: 0 0 4px 0; 
+  margin: 0 0 4px 0;
 }
 
 .timestamp {
@@ -279,10 +283,10 @@ body {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  height: 48px; /* Locks the height so items don't jump vertically */
+  height: 48px; /* Locks the height*/
 }
 
-/* Left Side: The 3 File Icons (Default State) */
+/* Left Side: The 3 File Icons */
 .combo-upload-files {
   position: absolute;
   left: 0;
@@ -305,7 +309,7 @@ body {
   transform: scale(1.1);
 }
 
-/* Left Side: The Paperclip (Typing State) */
+/* Left Side: The Paperclip */
 .combo-paperclip-btn {
   position: absolute;
   left: 0;
@@ -330,7 +334,7 @@ body {
   color: var(--secondary-color);
 }
 
-/* The Input Wrapper (Controls width and holds the Spark) */
+/* The Input Wrapper (Controls width and holds the AI Sparkle) */
 .dynamic-input-wrapper {
   position: relative;
   width: calc(100% - 110px); /* Default: leaves 110px for the 3 icons */
@@ -340,7 +344,7 @@ body {
   transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.05);
 }
 
-/* The Text Input Box */
+/* The Text Box */
 .combo-input-text {
   width: 100%;
   height: 100%;
@@ -362,10 +366,10 @@ body {
   color: var(--text-grey);
 }
 
-/* The Magic Spark */
+/* The AI Spark */
 .magic-spark {
   position: absolute;
-  left: 14px; /* Anchored safely inside the input wrapper */
+  left: 14px; /* Anchored inside the input wrapper */
   width: 22px;
   color: var(--secondary-color);
   pointer-events: none;
@@ -431,15 +435,15 @@ body {
   box-shadow: 0 4px 10px rgba(232, 90, 16, 0.4);
 }
 
-/* INTERACTION STATES (When Typing) */
+/* INTERACTION STATES (For Typing) */
 
 /* 1. Expand the wrapper to the left */
 .dynamic-input-wrapper:focus-within,
 .dynamic-input-wrapper:has(input:valid) {
-  width: calc(100% - 50px); /* Leaves just 50px for the paperclip */
+  width: calc(100% - 50px); /* Leaves 50px for the paperclip */
 }
 
-/* 2. Show the Send button */
+/* 2. Show Send button */
 .combo-input-text:focus ~ .combo-send-btn,
 .combo-input-text:valid ~ .combo-send-btn {
   opacity: 1;
@@ -613,7 +617,7 @@ body {
   color: var(--text-grey);
 }
 
-/* Car Specs */
+/* Car Info */
 .car-specs {
   display: flex;
   gap: 16px;
@@ -630,8 +634,8 @@ body {
   color: var(--text-grey);
 }
 
-/* Skeleton Loading Card */
-.skeleton-card {
+/* Undefined Loading Card */
+.undefined-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -642,7 +646,7 @@ body {
   min-height: 300px;
 }
 
-.skeleton-card:hover {
+.undefined-card:hover {
   transform: none;
   box-shadow: none;
   border-color: var(--text-grey);
@@ -662,7 +666,7 @@ body {
   animation: pulse 1.5s infinite;
 }
 
-.skeleton-card p {
+.undefined-card p {
   font-size: 14px;
   color: var(--text-grey);
   margin: 0;

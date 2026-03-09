@@ -25,22 +25,22 @@ a { text-decoration: none; color: inherit; }
 .vdp-nav {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* This forces vertical centering */
+    align-items: center; 
     padding: 16px 5%;
-    background: rgba(255, 255, 255, 0.95); /* Slightly less transparent for cleaner look */
+    background: rgba(255, 255, 255, 0.95); /*Glassmorphism*/
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 80px; /* Enforce a fixed height so items don't float */
+    height: 80px; /*Fixed Height*/
 }
 
 .nav-actions {
     display: flex;
-    align-items: center; /* Ensures the bell and avatar line up horizontally */
-    gap: 20px; /* Space between links, bell, and avatar */
+    align-items: center;
+    gap: 20px;
     height: 100%;
 }
 
@@ -51,7 +51,7 @@ a { text-decoration: none; color: inherit; }
     background-size: cover;
     border-radius: 50%;
     border: 2px solid #e5e7eb;
-    margin: 0; /* Remove old margin that pushed it weirdly */
+    margin: 0;
 }
 
 /* Main Layout */
@@ -121,7 +121,7 @@ a { text-decoration: none; color: inherit; }
     margin-top: 6px;
 }
 
-/* Bento Photo Grid */
+/* Bento-style Photo Grid */
 .photo-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -199,37 +199,36 @@ a { text-decoration: none; color: inherit; }
     position: relative; 
     width: 140px; 
     display: flex;
-    flex-direction: column; /* Stack Top-to-Bottom */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-right: 24px; /* Space between chart and mechanic note */
+    margin-right: 24px; 
 }
 
 /* 1. The Donut Chart Container */
-/* FIXED: Health Score SVG Styling */
 .circular-chart {
   display: block;
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
-  transform: rotate(0deg); /* Reset rotation if any */
+  transform: rotate(0deg); /* Reset rotation */
 }
 
 .circle-bg {
   fill: none;
-  stroke: #f3f4f6; /* Light grey track */
+  stroke: #f3f4f6;
   stroke-width: 2.5;
 }
 
 .circle {
-  fill: none; /* KEY FIX: This stops the black circle */
+  fill: none; 
   stroke-width: 2.5;
   stroke-linecap: round;
-  stroke: #22c55e; /* Your Success Green */
+  stroke: #22c55e; 
   animation: progress 1s ease-out forwards;
 }
 
-/* Optional: Animation to make it look premium */
+/* Animation for score container*/
 @keyframes progress {
   0% { stroke-dasharray: 0, 100; }
 }
@@ -237,7 +236,7 @@ a { text-decoration: none; color: inherit; }
 /* 2. The "92% HEALTH" text inside the circle */
 .score-text {
     position: absolute; 
-    top: 40px; /* Move it UP slightly so it sits perfectly in the center */
+    top: 40px;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -246,7 +245,7 @@ a { text-decoration: none; color: inherit; }
 }
 .score-text span {
     display: block;
-    font-size: 24px; /* Slightly smaller to fit better */
+    font-size: 24px;
     font-weight: 800;
     color: #111827;
     line-height: 1;
@@ -260,9 +259,9 @@ a { text-decoration: none; color: inherit; }
     margin-top: 2px;
 }
 
-/* 3. The "Inspected on..." text BELOW the circle */
+/* 3. The "Inspected on..." text below the circle */
 .inspected-date { 
-    margin-top: 15px; /* Force gap from the chart */
+    margin-top: 15px; 
     font-size: 10px; 
     color: #6b7280; 
     font-weight: 600;
