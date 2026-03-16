@@ -1,0 +1,257 @@
+/* auth.css */
+
+:root {
+  --primary-copper: #b87363;
+  --obsidian: #121212;
+  --soft-gray: #f5f5f7;
+  --muted-text: #6e6e73;
+  --border-color: #d2d2d7;
+  --white: #ffffff;
+  --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--white);
+  color: var(--obsidian);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* LEFT SIDE: BRAND STORY */
+.auth-left {
+  flex: 1.2;
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bg-img {
+  object-fit: cover;
+  z-index: -10;
+  position: absolute;
+}
+.Text{
+  padding-left: 50px;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: azure;
+  margin-bottom: 6rem;
+  border: #b87363 5px solid;
+}
+
+.headline {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  color: azure;
+  border: #b87363 5px solid;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--muted-text);
+  margin-bottom: 3rem;
+  max-width: 480px;
+  line-height: 1.6;
+  border: #b87363 5px solid;
+}
+
+.trust-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.trust-points p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color:  azure;
+  border: #b87363 5px solid;
+}
+
+/* RIGHT SIDE: LOGIN FORM */
+.auth-right {
+  flex: 1;
+  padding: 80px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--white);
+}
+
+.auth-right h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.auth-subtext {
+  color: var(--muted-text);
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--obsidian);
+}
+
+.auth-form input {
+  padding: 14px 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.auth-form input:focus {
+  border-color: var(--primary-copper);
+  box-shadow: 0 0 0 4px rgba(184, 115, 99, 0.1);
+}
+
+.forgot-password {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  color: var(--primary-copper);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.signin-button {
+  background-color: var(--obsidian);
+  color: var(--white);
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.signin-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.security-note {
+  font-size: 0.75rem;
+  color: var(--muted-text);
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 2.5rem 0;
+  max-width: 400px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.divider span {
+  padding: 0 15px;
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* SOCIAL BUTTONS */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.social-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  background: transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.social-buttons button:hover {
+  background-color: var(--soft-gray);
+}
+
+.social-buttons svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 968px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-left {
+    padding: 60px 8%;
+    flex: none;
+  }
+
+  .brand {
+    margin-bottom: 2rem;
+  }
+
+  .auth-right {
+    padding: 60px 8%;
+  }
+
+  .trust-points {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}
